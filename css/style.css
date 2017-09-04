@@ -71,6 +71,10 @@ img {
     background-color: #e7ebed;
 }
 
+.slider--tile-hidden {
+    display: none;
+}
+
 .slider--tile:hover {
     background-color: #eae6e1;
     cursor: pointer;
