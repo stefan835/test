@@ -38,7 +38,7 @@ img {
 
 .header--tile {
     text-align: center;
-    width: 22%;
+    margin: 0 20px;
 }
 
 .header--tile__icon {
@@ -76,12 +76,58 @@ img {
     cursor: pointer;
 }
 
-.slider--tile img {
-    filter: brightness(70%);
+.slider--tile:hover .slider--tile__img {
+    filter: brightness(100%);
 }
 
-.slider--tile img:hover {
-    filter: brightness(100%);
+.slider--tile__img {
+    filter: brightness(70%);
+    min-width: 263px;
+    min-height: 213px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.speaker {
+    background: url('../img/speaker-cut.jpg') no-repeat;
+    background-size: contain;
+}
+
+.furniture {
+    background: url('../img/furniture-cut.jpg') no-repeat;
+    background-size: contain;
+}
+
+.sunbeds {
+    background: url('../img/sunbeds-cut.jpg') no-repeat;
+    background-size: contain;
+}
+
+.pool {
+    background: url('../img/pool-cut.jpg') no-repeat;
+    background-size: contain;
+}
+
+.slider--tile__icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider--container:hover .pool:first-child {
+    display: flex;
+}
+
+.slider--tile__icon i {
+    font-size: 30px;
+    color: white;
 }
 
 .slider--tile__content {
