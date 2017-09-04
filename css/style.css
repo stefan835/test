@@ -56,6 +56,23 @@ img {
 
 .slider--container {
     margin: 30px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.arrow--left {
+    cursor: pointer;
+    display: none;
+}
+
+.arrow--right {
+    cursor: pointer;
+}
+
+.arrow--right img {
+    transform: rotate(180deg);
 }
 
 .slider--pair {
