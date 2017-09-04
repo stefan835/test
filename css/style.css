@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+}
+
+.container {
+    max-width: 1140px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.header--container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.slider--pair {
+    display: flex;
+}
+
+.slider--tile {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.contact--container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-us--pair {
+    display: flex;
+}
