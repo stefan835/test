@@ -8,7 +8,6 @@ const $arrowRight = $('.slider--arrow__right');
 
 //SLIDER
 const pageDisplay = currentPage => $tiles.map((index, tile) => {
-
   $(tile).addClass('slider--tile-hidden');
   index > currentPage * tilesOnSlide - 1 && index < currentPage * tilesOnSlide + tilesOnSlide ? $(tile).removeClass('slider--tile-hidden') : null
 });
@@ -17,8 +16,8 @@ pageDisplay(currentPage);
 
 const rotateSlider = delta => {
   $('.slider--tiles').fadeOut().fadeIn()
+  currentPage < amountOfSlides && (currentPage >= 0) ? currentPage += delta : null;
   setTimeout(() => {
-    currentPage < amountOfSlides && (currentPage >= 0) ? currentPage += delta : null;
     pageDisplay(currentPage);
     highlightCurrentPage()
   }, 400)
