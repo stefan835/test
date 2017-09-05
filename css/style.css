@@ -86,7 +86,7 @@ img {
 .slider--pair {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    max-width: 50%;
 }
 
 .slider--tile {
@@ -95,6 +95,10 @@ img {
     flex-direction: row;
     margin: 10px;
     background-color: #e7ebed;
+    /*http://lea.verou.me/css3patterns/#tablecloth*/
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, .05) 12%, transparent 12%),
+    linear-gradient(rgba(0, 0, 0, .05) 12%, transparent 12%);
+    background-size: 5px 5px;
 }
 
 .slider--tile-hidden {
@@ -165,10 +169,6 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /*http://lea.verou.me/css3patterns/#tablecloth*/
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, .05) 12%, transparent 12%),
-    linear-gradient(rgba(0, 0, 0, .05) 12%, transparent 12%);
-    background-size: 5px 5px;
     padding: 10px 15px;
     flex: 0.6
 }
@@ -233,4 +233,62 @@ img {
     flex-direction: column;
     justify-content: space-around;
     min-height: 150px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+
+    .header--container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header--tile {
+        margin: 10px 0;
+    }
+
+    .slider--pair {
+        max-width: 100%;
+        flex-direction: column;
+
+    }
+
+    .slider--tiles {
+        flex-direction: column;
+
+    }
+
+    .slider--tile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .slider--arrow__right {
+        display: none;
+    }
+
+    .contact--container {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .contact__info {
+        padding: 20px;
+    }
+
+    .contact--button {
+        margin: 20px;
+        font-size: 25px;
+    }
+
+    .about-us--pair {
+        display: block;
+        text-align: center;
+    }
+
 }
