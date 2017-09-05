@@ -18,7 +18,7 @@ body {
 }
 
 img {
-    max-width: 100%;
+    align-self: center;
 }
 
 .read-more__link {
@@ -35,6 +35,10 @@ img {
     flex-direction: row;
     justify-content: space-between;
     margin: 30px 0;
+}
+
+.header--pair {
+    display: flex;
 }
 
 .header--tile {
@@ -74,6 +78,11 @@ img {
 
 .slider--arrow__right img {
     transform: rotate(180deg);
+    height: 50px;
+}
+
+.slider--arrow__left img {
+    height: 50px;
 }
 
 .slider--tiles {
@@ -120,17 +129,22 @@ img {
 
 .slider--tile__img {
     filter: brightness(70%);
-    min-width: 263px;
-    min-height: 213px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 0.4
+    flex: 0.4;
+    min-height: 157px;
+    min-width: 208px;
+}
+
+.slider--tile__img img {
+
 }
 
 .speaker {
     background: url('../img/speaker-cut.jpg') no-repeat;
     background-size: contain;
+
 }
 
 .furniture {
@@ -150,8 +164,8 @@ img {
 
 .slider--tile__icon {
     background-color: rgba(0, 0, 0, 0.5);
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
     margin: 10px;
     text-align: center;
@@ -161,7 +175,7 @@ img {
 }
 
 .slider--tile__icon i {
-    font-size: 30px;
+    font-size: 20px;
     color: white;
 }
 
@@ -201,6 +215,10 @@ img {
     margin: 30px 0;
 }
 
+.decoration__line {
+    max-width: 100%;
+}
+
 .contact__info {
     color: grey;
 }
@@ -235,15 +253,41 @@ img {
     min-height: 150px;
 }
 
+@media (max-width: 1024px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .header--tile__icon h2 {
+        font-size: 1.4em;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         max-width: 720px;
+    }
+    .header--pair{
+        display: block;
+    }
+    .header--tile{
+        margin:20px 10px;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 540px;
     }
 
     .header--container {
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
+    }
+    .header--pair{
+        display: block;
     }
 
     .header--tile {
