@@ -7,7 +7,6 @@ const amountOfSlides = Math.ceil(amountOfTiles / tilesOnSlide);
 const arrowLeft = $('.slider--arrow__left');
 const arrowRight = $('.slider--arrow__right');
 
-
 const pageDisplay = currentPage => tiles.map((index, tile) => {
   $(tile).addClass('slider--tile-hidden');
   index > currentPage * tilesOnSlide - 1 && index < currentPage * tilesOnSlide + tilesOnSlide ? $(tile).removeClass('slider--tile-hidden') : null
@@ -44,13 +43,13 @@ const highlightPage = () => {
 };
 
 $('.slider--button').click((event) => {
-  const newPage = parseInt($(event.target).attr('data-index'))
+  const newPage = parseInt($(event.target).attr('data-index'));
   currentPage = newPage - 1;
-  pageDisplay(currentPage)
+  pageDisplay(currentPage);
   arrowLeft.show();
   arrowRight.show();
-  currentPage === 0 ? arrowLeft.hide() : null
-  currentPage === amountOfSlides - 1 ? arrowRight.hide() : null
+  currentPage === 0 ? arrowLeft.hide() : null;
+  currentPage === amountOfSlides - 1 ? arrowRight.hide() : null;
   highlightPage();
-})
+});
 highlightPage();
