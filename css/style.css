@@ -68,21 +68,21 @@ img {
 }
 
 .slider--arrow__left {
-    cursor: pointer;
     display: none;
+    height: 50px;
+    min-width: 23px;
+    cursor: pointer;
+    background: url('../img/chevron-left.png') no-repeat;
+    background-size: cover;
 }
 
 .slider--arrow__right {
+    height: 50px;
+    min-width: 23px;
     cursor: pointer;
-}
-
-.slider--arrow__right img {
+    background: url('../img/chevron-left.png') no-repeat;
     transform: rotate(180deg);
-    height: 50px;
-}
-
-.slider--arrow__left img {
-    height: 50px;
+    background-size: cover;
 }
 
 .slider--tiles {
@@ -205,6 +205,7 @@ img {
 .contact--container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px 0 0 0;
     margin: 30px 0;
 }
@@ -223,7 +224,8 @@ img {
     border: none;
     box-shadow: 0 2px 2px #000;
     border-radius: 5px;
-    padding: 15px 30px;
+    padding: 15px 20px;
+    font-size: 20px;
 }
 
 .contact--button:hover {
@@ -261,7 +263,6 @@ img {
         align-items: center;
         text-align: center;
     }
-
 }
 
 @media (max-width: 768px) {
@@ -284,11 +285,18 @@ img {
 
     .slider--tile {
         flex-direction: row;
-
     }
 
     .slider--pair {
         max-width: 100%;
+    }
+
+    .slider--arrow__left {
+        transform: rotate(90deg)
+    }
+
+    .slider--arrow__right {
+        transform: rotate(270deg);
     }
 }
 
@@ -314,18 +322,24 @@ img {
     .slider--pair {
         max-width: 100%;
         flex-direction: column;
-
     }
 
     .slider--tiles {
         flex-direction: column;
-
     }
 
     .slider--tile {
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+
+    .slider--arrow__left {
+        transform: rotate(90deg)
+    }
+
+    .slider--arrow__right {
+        transform: rotate(270deg);
     }
 
     .contact--container {
@@ -335,7 +349,8 @@ img {
     }
 
     .contact__info {
-        padding: 20px;
+        display: flex;
+        justify-content: center;
     }
 
     .contact--button {
@@ -347,5 +362,4 @@ img {
         display: block;
         text-align: center;
     }
-
 }
