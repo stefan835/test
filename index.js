@@ -1,8 +1,12 @@
+//SLIDER
 let currentPage = 0;
 const tiles = $('.slider--tile');
 const amountOfTiles = tiles.length;
 const tilesOnSlide = 4;
 const amountOfSlides = Math.ceil(amountOfTiles / tilesOnSlide);
+const arrowLeft = $('.slider--arrow__left');
+const arrowRight = $('.slider--arrow__right');
+
 
 const pageDisplay = currentPage => tiles.map((index, tile) => {
   $(tile).addClass('slider--tile-hidden');
@@ -16,29 +20,37 @@ const rotateSlider = delta => {
   pageDisplay(currentPage);
   highlightPage()
 };
-
-$('.slider--arrow__right').on("click", () => {
+//SLIDER ARROWS
+arrowRight.on("click", () => {
   rotateSlider(1);
-  $('.slider--arrow__left').show();
-  currentPage === (amountOfTiles / 4) - 1 ? $('.slider--arrow__right').hide() : null
+  arrowLeft.show();
+  currentPage === (amountOfTiles / 4) - 1 ? arrowRight.hide() : null
 });
 
-$('.slider--arrow__left').on("click", () => {
+arrowLeft.on("click", () => {
   rotateSlider(-1);
-  $('.slider--arrow__right').show();
-  currentPage === 0 ? $('.slider--arrow__left').hide() : null
+  arrowRight.show();
+  currentPage === 0 ? arrowLeft.hide() : null
 });
 
-
+//SLIDER BUTTONS
 for (let i = 0; i < amountOfSlides; i += 1) {
   $('.slider--buttons').append($('<div>').addClass('slider--button').attr('data-index', i + 1))
 }
-
 const highlightPage = () => {
   $('.slider--button').map((index, button) => {
-    console.log(button);
-    console.log($(button));
-    index === currentPage ? $(button).addClass('slider--button__active') : $(button).removeClass('slider--button__active')
+    parseInt($(button).attr('data-index')) - 1 === currentPage ? $(button).addClass('slider--button__active') : $(button).removeClass('slider--button__active')
   })
 };
+
+$('.slider--button').click((event) => {
+  const newPage = parseInt($(event.target).attr('data-index'))
+  currentPage = newPage - 1;
+  pageDisplay(currentPage)
+  arrowLeft.show();
+  arrowRight.show();
+  currentPage === 0 ? arrowLeft.hide() : null
+  currentPage === amountOfSlides - 1 ? arrowRight.hide() : null
+  highlightPage();
+})
 highlightPage();
