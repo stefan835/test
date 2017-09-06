@@ -213,7 +213,7 @@ img {
     max-width: 100%;
 }
 
-.contact__info {
+.contact-info {
     color: grey;
 }
 
@@ -347,7 +347,7 @@ img {
         justify-content: center;
     }
 
-    .contact__info {
+    .contact-info {
         display: flex;
         justify-content: center;
     }

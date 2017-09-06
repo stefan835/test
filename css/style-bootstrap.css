@@ -14,6 +14,11 @@ body {
 }
 
 h1 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+h2 {
     font-size: 20px;
     font-weight: 700;
 }
@@ -69,11 +74,11 @@ a:not([href]):not([tabindex]):hover {
     min-height: 190px;
     justify-content: center;
     align-items: center;
-    filter: brightness(70%);
+    filter: opacity(80%);
 }
 
 .slider--tile:hover .slider--tile__img {
-    filter: brightness(100%);
+    filter: opacity(100%);
 }
 
 .slider--tile__icon i {
@@ -107,20 +112,32 @@ a:not([href]):not([tabindex]):hover {
 
 .pool {
     background: url('../img/pool-cut.jpg') no-repeat;
-    background-size: contain;
     background-position: center;
 }
 
-.contact__info {
-    text-align: center;
+.contact-info--container {
+    margin: 20px 0 30px 0;
+}
+
+.contact__highlight {
+    color: #a9acac;
+    margin-right: 10px;
 }
 
 .btn-secondary {
     background-color: #637373;
-    padding: 10px 20px;
+    padding: 15px 25px;
     border: #526262 1px solid;
     font-weight: 600;
     margin: 10px 0 30px 0;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.about-us--container {
+    margin: 40px -15px;
 }
 
 .about-us--tile {
@@ -136,9 +153,20 @@ a:not([href]):not([tabindex]):hover {
         padding: 0 10px;
     }
 
-    .contact__info {
+    .contact-info {
         text-align: left;
         display: inherit;
+    }
+
+    .about-us--tile {
+        text-align: left;
+    }
+
+    .contact-info {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        padding: 0;
     }
 }
 
