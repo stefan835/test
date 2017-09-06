@@ -14,28 +14,6 @@ const pageDisplay = currentPage => $tiles.map((index, tile) => {
 
 pageDisplay(currentPage);
 
-const rotateSlider = delta => {
-  $('.slider--tiles').fadeOut().fadeIn()
-  currentPage < amountOfSlides && (currentPage >= 0) ? currentPage += delta : null;
-  setTimeout(() => {
-    pageDisplay(currentPage);
-    highlightCurrentPage()
-  }, 400)
-
-};
-//SLIDER ARROWS
-$arrowRight.on("click", () => {
-  rotateSlider(1);
-  $arrowLeft.show();
-  currentPage === amountOfSlides - 1 ? $arrowRight.hide() : null
-});
-
-$arrowLeft.on("click", () => {
-  rotateSlider(-1);
-  $arrowRight.show();
-  currentPage === 0 ? $arrowLeft.hide() : null
-});
-
 //SLIDER BUTTONS
 for (let i = 0; i < amountOfSlides; i += 1) {
   $('.slider--buttons').append($('<div>').addClass('slider--button').attr('data-index', i + 1))
@@ -52,8 +30,6 @@ $('.slider--button').click((event) => {
     const newPage = parseInt($(event.target).attr('data-index'));
     currentPage = newPage - 1;
     pageDisplay(currentPage);
-    $arrowLeft.show();
-    $arrowRight.show();
     currentPage === 0 ? $arrowLeft.hide() : null;
     currentPage === amountOfSlides - 1 ? $arrowRight.hide() : null;
     highlightCurrentPage();
