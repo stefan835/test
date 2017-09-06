@@ -1,18 +1,150 @@
+/*ENTIRE DOCUMENT*/
+body {
+    background-color: #f6f8f9;
+}
+
+.container {
+    color: #3b4444;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+
 .fa {
     font-size: 60px;
 }
 
-.container{
+h1 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0 0 5px 0;
+}
+
+a:not([href]):not([tabindex]) {
+    color: #c9ab8b;
+}
+
+a:not([href]):not([tabindex]):hover {
+    color: #bcc;
+    cursor: pointer;
+}
+
+.header--container {
+    margin: 30px 0;
+}
+
+/*SPECIFIC ELEMENTS*/
+
+.header--tile__icon:hover {
+    cursor: pointer;
+    color: #c9ab8b;
+}
+
+.slider--tile {
+    margin: 0;
+    padding: 0;
+    border: #f6f8f9 10px solid;
+    background-color: #e7ebed;
+    /*http://lea.verou.me/css3patterns/#tablecloth*/
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, .05) 12%, transparent 12%),
+    linear-gradient(rgba(0, 0, 0, .05) 12%, transparent 12%);
+    background-size: 5px 5px;
+}
+
+.slider--tile:hover {
+    background-color: #eae6e1;
+    cursor: pointer;
+}
+
+.slider--tile__content {
+    padding: 10px;
+}
+
+.slider--tile__img {
+    display: flex;
+    min-height: 190px;
+    justify-content: center;
+    align-items: center;
+    filter: brightness(70%);
+}
+
+.slider--tile:hover .slider--tile__img {
+    filter: brightness(100%);
+}
+
+.slider--tile__icon i {
+    display: none;
+    font-size: 25px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 10px;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.slider--tile:hover .slider--tile__img .slider--tile__icon i {
+    display: flex;
+}
+
+.speaker {
+    background: url('../img/speaker-cut.jpg') no-repeat;
+    background-position: center;
+}
+
+.furniture {
+    background: url('../img/furniture-cut.jpg') no-repeat;
+    background-position: center;
+}
+
+.sunbeds {
+    background: url('../img/sunbeds-cut.jpg') no-repeat;
+    background-position: center;
+}
+
+.pool {
+    background: url('../img/pool-cut.jpg') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.contact__info {
     text-align: center;
 }
 
-.contact__info{
-    text-align: left;
+.btn-secondary {
+    background-color: #637373;
+    padding: 10px 20px;
+    border: #526262 1px solid;
+    font-weight: 600;
+    margin: 10px 0 30px 0;
 }
 
+.about-us--tile {
+    margin: 10px 0;
+}
 
-.about-us--tile{
-    margin:10px 0;
-    text-align: center;
-    padding-left: calc(50%- 52px);
+@media (min-width: 992px) {
+    .slider--tile__content {
+        text-align: left;
+    }
+
+    .slider--tile__content {
+        padding: 0 10px;
+    }
+
+    .contact__info {
+        text-align: left;
+        display: inherit;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .slider--tile__content {
+        padding: 10px;
+    }
 }
