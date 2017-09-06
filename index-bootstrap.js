@@ -1,4 +1,4 @@
-let currentPage = 1;
+let currentPage = 0;
 const $tiles = $('.slider--tile');
 const amountOfTiles = $tiles.length;
 const tilesOnSlide = 4;
@@ -9,7 +9,7 @@ const pageDisplay = currentPage => $tiles.map((index, tile) => {
   $(tile).addClass('slider--tile-hidden');
   index > currentPage * tilesOnSlide - 1 && index < currentPage * tilesOnSlide + tilesOnSlide ? $(tile).removeClass('slider--tile-hidden') : null
 });
-
+pageDisplay(currentPage);
 //SLIDER BUTTONS
 for (let i = 0; i < amountOfSlides; i += 1) {
   $('.slider--buttons').append($('<div>').addClass('slider--button').attr('data-index', i + 1))
@@ -24,11 +24,11 @@ $('.slider--button').click((event) => {
   $('.slider--tiles').fadeOut().fadeIn()
   setTimeout(() => {
     const newPage = parseInt($(event.target).attr('data-index'));
-    currentPage = newPage;
+    currentPage = newPage - 1;
     pageDisplay(currentPage);
     highlightCurrentPage();
   }, 400)
 
 });
-pageDisplay(currentPage);
+
 highlightCurrentPage();
